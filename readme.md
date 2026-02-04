@@ -97,9 +97,9 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## Autor ✒️
 
-* **Tu Nombre** - [tu-usuario](https://github.com/tu-usuario)
+[MarcosRFlores](https://github.com/MarcosRFlores)
 
 ## Agradecimientos 🙏
 
 - Inspirado en editores de texto minimalistas
-- Icono de [fuente del icono]
+- Icono de mi gato Odin (Come) bello
