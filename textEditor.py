@@ -17,10 +17,17 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
+def updateTitle():
+    if fileName is None:
+        root.title("Come's Blog - Sin Título")
+    else:
+        root.title(f"Come's Blog - {os.path.basename(fileName)}")
+
 def newFile():
     global fileName
     fileName = None
     text.delete(1.0, END)
+    updateTitle()
 
 def saveFile():
     global fileName
@@ -30,6 +37,7 @@ def saveFile():
     t= text.get(1.0,END)
     with open(fileName, "w") as f:
         f.write(t)
+    updateTitle()
 
 def saveAs():
     global fileName
@@ -42,6 +50,7 @@ def saveAs():
 
     fileName = f.name
     f.close()
+    updateTitle()
 
 def openFile():
     global fileName
@@ -53,6 +62,7 @@ def openFile():
     text.insert(1.0, t) 
     fileName = f.name  
     f.close()
+    updateTitle()
 
 def undo():
     try:
@@ -70,7 +80,7 @@ def redo():
 root = Tk()
 icon_path = resource_path("odin.png")
 root.iconphoto(False, PhotoImage(file=icon_path))
-root.title("Come's Blog")
+root.title("Come's Blog - Sin Título")
 root.geometry("400x400")
 root.minsize(width=400, height=400)
 root.resizable(True, True)
