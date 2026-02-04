@@ -54,6 +54,18 @@ def openFile():
     fileName = f.name  
     f.close()
 
+def undo():
+    try:
+        text.edit_undo()
+    except:
+        pass
+
+def redo():
+    try:
+        text.edit_redo()
+    except:
+        pass
+
 #Configuraciones del root
 root = Tk()
 icon_path = resource_path("odin.png")
@@ -65,6 +77,8 @@ root.resizable(True, True)
 root.bind("<Control-s>", lambda e: saveFile())
 root.bind("<Control-o>", lambda e: openFile())
 root.bind("<Control-n>", lambda e: newFile())
+root.bind("<Control-z>", lambda e: undo())
+root.bind("<Control-p>", lambda e: redo())
 
 #Configuraciones del scroll vertical
 scroll_y = Scrollbar(root)
@@ -99,8 +113,8 @@ filemenu.add_command(label="Abrir", command=openFile)
 filemenu.add_command(label="Guardar", command=saveFile)
 filemenu.add_command(label="Guardar como...", command=saveAs)
 filemenu.add_separator()
-filemenu.add_command(label="Deshacer", command=text.edit_undo)
-filemenu.add_command(label="Rehacer", command=text.edit_redo)
+filemenu.add_command(label="Deshacer", command=undo)
+filemenu.add_command(label="Rehacer", command=redo)
 filemenu.add_separator()
 filemenu.add_command(label="Salir", command=root.quit)
 menubar.add_cascade(label="Archivo", menu = (filemenu))

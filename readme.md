@@ -60,6 +60,8 @@ come-blog
 | `Ctrl + N` | Nuevo archivo |
 | `Ctrl + O` | Abrir archivo |
 | `Ctrl + S` | Guardar archivo |
+| `Ctrl + Z` | Deshacer |
+| `Ctrl + P` | Rehacer |
 
 ## Desinstalación 🗑️
 ```bash
