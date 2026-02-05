@@ -23,7 +23,7 @@ jobs:
       run: pip install pyinstaller
     
     - name: Build Windows executable
-      run: pyinstaller --onefile --windowed --icon=odin.ico --name="ComeBlog" textEditor.py
+      run: pyinstaller --onefile --windowed --icon=odin.ico --add-data "odin.png;." --name="ComeBlog" textEditor.py
     
     - name: Upload artifact
       uses: actions/upload-artifact@v4
